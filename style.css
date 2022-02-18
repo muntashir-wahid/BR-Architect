@@ -181,15 +181,15 @@ footer
   background-color: black;
   color: white;
   text-align: center;
-  padding: 33px;
+  padding: 10px 0;
   margin-top: 8px;
 }
 footer > a
 {
   color: whitesmoke;
   font-family:'Allison', cursive;
-  font-size: 20px;
-  font-weight: 900;
+  font-size: 12px;
+  font-weight: 500;
   text-decoration: none;
 } 
 @media screen and (max-width: 850px) {
