@@ -3,6 +3,10 @@
 // HTML Elements
 
 const navLinksEl = document.querySelectorAll(".nav_link");
+const navBarEl = document.querySelector('nav');
+const headerEl = document.querySelector('header');
+
+// Smooth scroll 
 
 navLinksEl.forEach((link) => {
   link.addEventListener("click", function (e) {
@@ -25,3 +29,23 @@ navLinksEl.forEach((link) => {
     });
   });
 });
+
+
+// Sticky nav
+
+const stickyNav = function(entries) {
+  const [entry] = entries;
+  // console.log(entry);
+  if (!entry.isIntersecting) {
+    navBarEl.classList.add('sticky-nav');
+  } else {
+    navBarEl.classList.remove('sticky-nav');
+  };
+}
+
+const headerObserver = new IntersectionObserver(stickyNav, {
+  root: null, 
+  threshold: 0,
+});
+
+headerObserver.observe(headerEl);
